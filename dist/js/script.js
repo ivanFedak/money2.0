@@ -211,6 +211,10 @@ const cards = () => {
     title: 'Luxury Wine',
     price: '7000'
   }, {
+    img: 'awm.png',
+    title: 'Awn',
+    price: '20000'
+  }, {
     img: 'cybertruck.png',
     title: 'Cybertruck',
     price: '70000'
@@ -231,9 +235,17 @@ const cards = () => {
     title: 'Mona Lisa',
     price: '780000000'
   }, {
+    img: 'ship.jpg',
+    title: 'Cruise Ship',
+    price: '930000000'
+  }, {
+    img: 'Putin.png',
+    title: 'Putin\'s palace',
+    price: '1000000000'
+  }, {
     img: 'charity.png',
     title: 'Сharity',
-    price: '296200000000'
+    price: '296199999999'
   }];
 
   function createItem(data) {
