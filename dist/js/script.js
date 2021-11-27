@@ -27,9 +27,23 @@ const calc = () => {
     input.addEventListener('input', function (e) {
       reCount();
       checkInput();
+      сheckLimit();
       generateList();
     });
   });
+
+  function сheckLimit() {
+    inputs.forEach(input => {
+      if (Number(input.dataset.price) > Number(total.innerHTML)) {
+        // can't buy anymore
+        if (!/-/g.test(Math.floor((Number(total.innerHTML) + Number(input.value * input.dataset.price)) / input.dataset.price))) {
+          input.value = Math.floor((Number(total.innerHTML) + Number(input.value * input.dataset.price)) / input.dataset.price);
+          reCount();
+          checkInput();
+        }
+      }
+    });
+  }
 
   function checkInput() {
     inputs.forEach(input => {
@@ -57,11 +71,6 @@ const calc = () => {
         // can't buy anymore if price more bigger than our money
         input.nextElementSibling.classList.add('_disabled');
         input.setAttribute('max', input.value);
-
-        if (!/-/g.test(Math.floor((Number(total.innerHTML) + Number(input.value * price)) / price))) {
-          input.value = Math.floor((Number(total.innerHTML) + Number(input.value * price)) / price);
-          reCount();
-        }
       } else {
         input.removeAttribute('max');
         input.nextElementSibling.classList.remove('_disabled');
@@ -131,7 +140,6 @@ const calc = () => {
       list.name = name;
       list.quan = input.value;
       list.price = input.dataset.price * input.value;
-      console.log(list);
       listArr.push(list);
       resultArr = listArr.filter(item => item.quan > 0); //every item which quan more than 0
     });
@@ -295,18 +303,15 @@ const modal = () => {
 
   closeBtn.addEventListener('click', closeModal);
   showBtn.addEventListener('click', function (e) {
-    closeModal(e);
-    setTimeout(() => {
-      const block = document.querySelector('footer');
-      const blockValue = block.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo({
-        //Заставляе скрол робити
-        top: blockValue,
-        //Свеху 
-        behavior: "smooth"
-      });
-    }, 100);
-    e.preventDefault();
+    closeModal(e); // setTimeout(() => {
+    //     const block = document.querySelector('footer');
+    //     const blockValue = block.getBoundingClientRect().top +  window.pageYOffset;
+    //     window.scrollTo({//Заставляе скрол робити
+    //         top: blockValue,//Свеху 
+    //         behavior: "smooth"
+    //     });
+    // }, 100);
+    // e.preventDefault();
   });
 };
 
@@ -360,6 +365,51 @@ const price = () => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (price);
+
+/***/ }),
+
+/***/ "./src/js/modules/scrolling.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/scrolling.js ***!
+  \*************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+const scrolling = () => {
+  let links = document.querySelectorAll('.modal__btn'),
+      speed = 0.2;
+  links.forEach(link => {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      let heightTop = document.documentElement.scrollTop,
+          //
+      // hash = this.hash,//
+      toBlock = document.querySelector('.footer').getBoundingClientRect().top,
+          //Top border to whhat we scroll
+      start = null; //start pos
+
+      requestAnimationFrame(step);
+
+      function step(time) {
+        if (start === null) {
+          start = time;
+        }
+
+        let progress = time - start,
+            r = toBlock < 0 ? Math.max(heightTop - progress / speed, heightTop + toBlock) : Math.min(heightTop + progress / speed, heightTop + toBlock);
+        document.documentElement.scrollTo(0, r);
+
+        if (r !== heightTop + toBlock) {
+          requestAnimationFrame(step);
+        } else {
+          location.hash = document.querySelector('.footer');
+        }
+      }
+    });
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (scrolling);
 
 /***/ }),
 
@@ -477,10 +527,12 @@ var __webpack_exports__ = {};
   \************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_default__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./services/default */ "./src/js/services/default.js");
-/* harmony import */ var _components_cards__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/cards */ "./src/js/components/cards.js");
-/* harmony import */ var _components_calc__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/calc */ "./src/js/components/calc.js");
-/* harmony import */ var _modules_posPrice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/posPrice */ "./src/js/modules/posPrice.js");
-/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/modal */ "./src/js/modules/modal.js");
+/* harmony import */ var _modules_scrolling__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/scrolling */ "./src/js/modules/scrolling.js");
+/* harmony import */ var _components_cards__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/cards */ "./src/js/components/cards.js");
+/* harmony import */ var _components_calc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/calc */ "./src/js/components/calc.js");
+/* harmony import */ var _modules_posPrice__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/posPrice */ "./src/js/modules/posPrice.js");
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/modal */ "./src/js/modules/modal.js");
+
 
 
 
@@ -488,11 +540,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 window.onload = function () {
-  (0,_components_cards__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  (0,_components_cards__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_services_default__WEBPACK_IMPORTED_MODULE_0__["default"])();
-  (0,_components_calc__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  (0,_modules_posPrice__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  (0,_modules_modal__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  (0,_components_calc__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  (0,_modules_posPrice__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  (0,_modules_modal__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  (0,_modules_scrolling__WEBPACK_IMPORTED_MODULE_1__["default"])();
 };
 }();
 /******/ })()

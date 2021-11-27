@@ -16,15 +16,24 @@ const calc = ()=>{
         checkInput();
 
         input.addEventListener('input',function(e){
-
             reCount();
             checkInput();
-
+            сheckLimit();
             generateList();
         });
     });
 
-
+    function сheckLimit(){
+        inputs.forEach(input=>{
+            if(Number(input.dataset.price) > Number(total.innerHTML)){ // can't buy anymore
+                if(!/-/g.test(Math.floor((Number(total.innerHTML) + Number((input.value * input.dataset.price))) / input.dataset.price))){
+                    input.value = Math.floor((Number(total.innerHTML) + Number((input.value * input.dataset.price))) / input.dataset.price);
+                    reCount();
+                    checkInput();
+                }
+            }
+        });
+    }
 
     function checkInput(){
         inputs.forEach(input=>{
@@ -50,11 +59,6 @@ const calc = ()=>{
             if(price > Number(total.innerHTML)){ // can't buy anymore if price more bigger than our money
                 input.nextElementSibling.classList.add('_disabled');
                 input.setAttribute('max', input.value);
-
-                if(!/-/g.test(Math.floor((Number(total.innerHTML) + Number((input.value * price))) / price))){
-                    input.value = Math.floor((Number(total.innerHTML) + Number((input.value * price))) / price);
-                    reCount();
-                }
 
             }else{
                 input.removeAttribute('max');
@@ -116,8 +120,6 @@ const calc = ()=>{
 
     const blocks = document.querySelectorAll('.main-block__item');
 
-
-
     let listArr = [];
     let resultArr = [];
 
@@ -129,7 +131,6 @@ const calc = ()=>{
             list.name = name;
             list.quan = input.value;
             list.price = input.dataset.price * input.value;
-            console.log(list);
             listArr.push(list);
             resultArr = listArr.filter(item => item.quan > 0 ); //every item which quan more than 0
         });

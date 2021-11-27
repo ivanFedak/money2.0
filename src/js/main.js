@@ -1,6 +1,6 @@
 
 import def from './services/default';
-
+import scrolling from './modules/scrolling';
 
 
 import cards from './components/cards';
@@ -15,4 +15,5 @@ window.onload = function (){
     calc();
     price();
     modal();
+    scrolling();
 };

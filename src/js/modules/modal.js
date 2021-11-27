@@ -23,17 +23,17 @@ const modal = ()=>{
 
     showBtn.addEventListener('click',function(e){
         closeModal(e);
-        setTimeout(() => {
+        // setTimeout(() => {
             
-            const block = document.querySelector('footer');
-            const blockValue = block.getBoundingClientRect().top +  window.pageYOffset;
+        //     const block = document.querySelector('footer');
+        //     const blockValue = block.getBoundingClientRect().top +  window.pageYOffset;
     
-            window.scrollTo({//Заставляе скрол робити
-                top: blockValue,//Свеху 
-                behavior: "smooth"
-            });
-        }, 100);
-        e.preventDefault();
+        //     window.scrollTo({//Заставляе скрол робити
+        //         top: blockValue,//Свеху 
+        //         behavior: "smooth"
+        //     });
+        // }, 100);
+        // e.preventDefault();
     })
     
 }
