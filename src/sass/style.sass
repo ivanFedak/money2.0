@@ -1,0 +1,91 @@
+@import './services/mixins'
+@import './services/icons' 
+ 
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic&display=swap)
+
+//-----fonts--------//
+// @import './services/fonts'
+
+// font-family: Roboto, sans-serif (300, 500, 700, 900)
+
+
+
+//ctr + shift + p
+
+//&display=swap
+
+
+
+
+// $maxWidth: 1440
+
+$maxWidthContainer: 1200 + 30
+//+ 30px
+  
+  
+$md1: $maxWidthContainer + 12
+$md2: 991.98 
+$md3: 767.98
+$md4: 479.98
+
+
+$mainColor: #000000
+
+
+
+
+
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+
+
+html,body
+  height: 100%
+  font-family: Roboto, sans-serif
+  font-size: 16px
+  color: $mainColor
+
+
+
+  
+._container
+  max-width: $maxWidthContainer + px
+  padding: 0 15px
+  margin: 0 auto
+
+.wrapper 
+  min-height: 100%
+  overflow: hidden
+  display: flex 
+  flex-direction: column
+  background-color: #F1F2F6
+  
+.page 
+  flex: 1 1 auto
+
+._lock
+  overflow: hidden
+
+// ----------Default settings
+@import './services/default'
+@import './services/swipper'
+@import './modules/ui' 
+@import './modules/modal' 
+
+
+//-----------Componets import-----------------\\
+
+  
+@import './components/header'
+@import './components/main'
+@import './components/footer'
+
+
+//-----------Componets import-----------------\\
+

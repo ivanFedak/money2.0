@@ -1,0 +1,52 @@
+.footer
+    padding-bottom: 20px
+    &__container
+        @media (max-width: $md3 + px) //Less 768
+           margin: 0 -15px
+    &__outside
+        background-color: #fff
+        @include adaptiv-value('padding-top', 40, 30, 1)
+        @include adaptiv-value('padding-bottom', 40, 30, 1)
+    &__wrapper
+        padding: 0 10px
+        max-width: 400px
+        margin: 0 auto
+    &__title
+        text-align: center
+        @include adaptiv-value('font-size', 32, 28, 1)
+        font-weight: 700
+        color:#333
+    &__body
+        padding: 20px 0 
+        display: flex
+        justify-content: center
+        flex-direction: column
+        align-items: stretch
+        font-size: 18px
+        border-bottom: 1px solid #333
+    &__item
+        display: flex
+        
+        &:not(:last-child)
+            margin-bottom: 2px
+    &__name
+        flex: 1 1 auto
+    &__quantity
+        margin-right: 30px
+    &__price
+        color: #24c486
+        font-weight: 700
+
+    &__bottom
+        padding-top: 10px
+        display: flex
+        justify-content: space-between
+    &__total
+        text-transform: uppercase
+        font-weight: 700
+        @include adaptiv-value('font-size', 26, 18, 1)
+        color: #333 
+    &__money
+        font-size: 22px
+        color: #24c486
+        font-weight: 700
