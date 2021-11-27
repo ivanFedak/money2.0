@@ -14,7 +14,7 @@ const price = ()=>{
     }, false);
 
 
-    window.addEventListener('scroll',fixOnScroll)
+    window.addEventListener('scroll',fixOnScroll);
     
     function fixOnScroll() {
 
@@ -37,11 +37,11 @@ const price = ()=>{
         const rect = el.getBoundingClientRect(),
               scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
               scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        return {top: rect.top + scrollTop, left: rect.left + scrollLeft}
+        return {top: rect.top + scrollTop, left: rect.left + scrollLeft};
     }
 
     
 
 
-}
+};
 export default price;

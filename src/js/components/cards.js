@@ -73,13 +73,7 @@ const cards = ()=>{
             title: 'Сharity',
             price: '296200000000',
         },
-        {
-            img: 'mona.jpg',
-            title: 'Igor\'s training',
-            price: '296200000001',
-        },
-
-    ]
+    ];
 
     function createItem(data) {
         data.forEach(item => {
@@ -107,11 +101,11 @@ const cards = ()=>{
                 </div>
 
             
-            `
+            `;
             document.querySelector('.main-block__body').appendChild(card);
         });
     }
-    createItem(db)
+    createItem(db);
 
 
 
@@ -125,5 +119,5 @@ const cards = ()=>{
 
 
 
-}
+};
 export default cards;
