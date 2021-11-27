@@ -2,117 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/components/cards.js":
-/*!************************************!*\
-  !*** ./src/js/components/cards.js ***!
-  \************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-const cards = () => {
-  let i = 0;
-  const db = [{
-    img: 'burger.png',
-    title: 'Big Mac',
-    price: '3'
-  }, {
-    img: 'Coca-Cola.png',
-    title: 'Coca-Cola',
-    price: '4'
-  }, {
-    img: 'cube.png',
-    title: 'rubik\'s cube',
-    price: '10'
-  }, {
-    img: 'iphone.png',
-    title: 'Iphone 13 Pro Max',
-    price: '1500'
-  }, {
-    img: 'macbook.png',
-    title: 'Macbook Pro 2021',
-    price: '3500'
-  }, {
-    img: 'videoCard.png',
-    title: 'Nvidia Rtx 3090',
-    price: '3800'
-  }, {
-    img: 'pc.png',
-    title: 'Gaming Pc',
-    price: '5000'
-  }, {
-    img: 'wine.png',
-    title: 'Luxury Wine',
-    price: '7000'
-  }, {
-    img: 'cybertruck.png',
-    title: 'Cybertruck',
-    price: '70000'
-  }, {
-    img: 'rolex.png',
-    title: 'Rolex',
-    price: '90000'
-  }, {
-    img: 'gold.png',
-    title: 'Gold Bar',
-    price: '700000'
-  }, {
-    img: 'formula.png',
-    title: 'Formula 1 Car',
-    price: '15000000'
-  }, {
-    img: 'mona.jpg',
-    title: 'Mona Lisa',
-    price: '780000000'
-  }, {
-    img: 'charity.png',
-    title: 'Сharity',
-    price: '296200000000'
-  }];
-
-  function createItem(data) {
-    data.forEach(item => {
-      const {
-        img,
-        title,
-        price
-      } = item;
-      let card = document.createElement('div');
-      card.classList.add('main-block__item');
-      card.dataset.id = i++;
-      card.innerHTML = `
-
-                <div class="main-block__image">
-                    <img src="./img//goods/${img}" alt="${title}">
-                </div>
-
-                <div class="main-block__content">
-                    <div class="main-block__title">${title}</div>
-                    <div class="main-block__price">$${price}</div>
-                </div>
-
-                <div class="main-block__controls">
-                    <button class="main-block__sell btn">Sell</button>
-                    <input autocomplete='off' min="0"  type='number' name='form[]' class='main-block__input' data-price=${price}>
-                    <button class="main-block__buy btn">Buy</button>
-                </div>
-
-            
-            `;
-      document.querySelector('.main-block__body').appendChild(card);
-    });
-  }
-
-  createItem(db);
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (cards);
-
-/***/ }),
-
-/***/ "./src/js/modules/calc.js":
-/*!********************************!*\
-  !*** ./src/js/modules/calc.js ***!
-  \********************************/
+/***/ "./src/js/components/calc.js":
+/*!***********************************!*\
+  !*** ./src/js/components/calc.js ***!
+  \***********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -265,6 +158,113 @@ const calc = () => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (calc);
+
+/***/ }),
+
+/***/ "./src/js/components/cards.js":
+/*!************************************!*\
+  !*** ./src/js/components/cards.js ***!
+  \************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+const cards = () => {
+  let i = 0;
+  const db = [{
+    img: 'burger.png',
+    title: 'Big Mac',
+    price: '3'
+  }, {
+    img: 'Coca-Cola.png',
+    title: 'Coca-Cola',
+    price: '4'
+  }, {
+    img: 'cube.png',
+    title: 'rubik\'s cube',
+    price: '10'
+  }, {
+    img: 'iphone.png',
+    title: 'Iphone 13 Pro Max',
+    price: '1500'
+  }, {
+    img: 'macbook.png',
+    title: 'Macbook Pro 2021',
+    price: '3500'
+  }, {
+    img: 'videoCard.png',
+    title: 'Nvidia Rtx 3090',
+    price: '3800'
+  }, {
+    img: 'pc.png',
+    title: 'Gaming Pc',
+    price: '5000'
+  }, {
+    img: 'wine.png',
+    title: 'Luxury Wine',
+    price: '7000'
+  }, {
+    img: 'cybertruck.png',
+    title: 'Cybertruck',
+    price: '70000'
+  }, {
+    img: 'rolex.png',
+    title: 'Rolex',
+    price: '90000'
+  }, {
+    img: 'gold.png',
+    title: 'Gold Bar',
+    price: '700000'
+  }, {
+    img: 'formula.png',
+    title: 'Formula 1 Car',
+    price: '15000000'
+  }, {
+    img: 'mona.jpg',
+    title: 'Mona Lisa',
+    price: '780000000'
+  }, {
+    img: 'charity.png',
+    title: 'Сharity',
+    price: '296200000000'
+  }];
+
+  function createItem(data) {
+    data.forEach(item => {
+      const {
+        img,
+        title,
+        price
+      } = item;
+      let card = document.createElement('div');
+      card.classList.add('main-block__item');
+      card.dataset.id = i++;
+      card.innerHTML = `
+
+                <div class="main-block__image">
+                    <img src="./img//goods/${img}" alt="${title}">
+                </div>
+
+                <div class="main-block__content">
+                    <div class="main-block__title">${title}</div>
+                    <div class="main-block__price">$${price}</div>
+                </div>
+
+                <div class="main-block__controls">
+                    <button class="main-block__sell btn">Sell</button>
+                    <input autocomplete='off' min="0"  type='number' name='form[]' class='main-block__input' data-price=${price}>
+                    <button class="main-block__buy btn">Buy</button>
+                </div>
+
+            
+            `;
+      document.querySelector('.main-block__body').appendChild(card);
+    });
+  }
+
+  createItem(db);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (cards);
 
 /***/ }),
 
@@ -478,7 +478,7 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_default__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./services/default */ "./src/js/services/default.js");
 /* harmony import */ var _components_cards__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/cards */ "./src/js/components/cards.js");
-/* harmony import */ var _modules_calc__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/calc */ "./src/js/modules/calc.js");
+/* harmony import */ var _components_calc__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/calc */ "./src/js/components/calc.js");
 /* harmony import */ var _modules_posPrice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/posPrice */ "./src/js/modules/posPrice.js");
 /* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/modal */ "./src/js/modules/modal.js");
 
@@ -490,7 +490,7 @@ __webpack_require__.r(__webpack_exports__);
 window.onload = function () {
   (0,_components_cards__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_services_default__WEBPACK_IMPORTED_MODULE_0__["default"])();
-  (0,_modules_calc__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  (0,_components_calc__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_modules_posPrice__WEBPACK_IMPORTED_MODULE_3__["default"])();
   (0,_modules_modal__WEBPACK_IMPORTED_MODULE_4__["default"])();
 };
