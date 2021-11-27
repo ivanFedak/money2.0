@@ -25,9 +25,7 @@ const scrolling = ()=>{
                     document.documentElement.scrollTo(0, r);
 
                 if(r !== heightTop + toBlock){
-                    requestAnimationFrame(step)
-                }else{
-                    location.hash = document.querySelector('.footer');
+                    requestAnimationFrame(step);
                 }
             }
 

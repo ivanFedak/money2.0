@@ -401,8 +401,6 @@ const scrolling = () => {
 
         if (r !== heightTop + toBlock) {
           requestAnimationFrame(step);
-        } else {
-          location.hash = document.querySelector('.footer');
         }
       }
     });
