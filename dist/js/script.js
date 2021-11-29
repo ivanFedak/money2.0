@@ -27,22 +27,20 @@ const calc = () => {
     input.addEventListener('input', function (e) {
       reCount();
       checkInput();
-      сheckLimit();
+      сheckLimit(e.target);
       generateList();
     });
   });
 
-  function сheckLimit() {
-    inputs.forEach(input => {
-      if (Number(input.dataset.price) > Number(total.innerHTML)) {
-        // can't buy anymore
-        if (!/-/g.test(Math.floor((Number(total.innerHTML) + Number(input.value * input.dataset.price)) / input.dataset.price))) {
-          input.value = Math.floor((Number(total.innerHTML) + Number(input.value * input.dataset.price)) / input.dataset.price);
-          reCount();
-          checkInput();
-        }
+  function сheckLimit(input) {
+    if (Number(input.dataset.price) > Number(total.innerHTML)) {
+      // can't buy anymore
+      if (!/-/g.test(Math.floor((Number(total.innerHTML) + Number(input.value * input.dataset.price)) / input.dataset.price))) {
+        input.value = Math.floor((Number(total.innerHTML) + Number(input.value * input.dataset.price)) / input.dataset.price);
+        reCount();
+        checkInput();
       }
-    });
+    }
   }
 
   function checkInput() {
@@ -242,11 +240,12 @@ const cards = () => {
     img: 'Putin.png',
     title: 'Putin\'s palace',
     price: '1000000000'
-  }, {
-    img: 'charity.png',
-    title: 'Сharity',
-    price: '296199999999'
-  }];
+  } // {
+  //     img: 'charity.png',
+  //     title: 'Сharity',
+  //     price: '296199999999',
+  // },
+  ];
 
   function createItem(data) {
     data.forEach(item => {
