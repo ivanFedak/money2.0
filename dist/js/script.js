@@ -21,9 +21,9 @@ const calc = () => {
   const arrTotal = [];
   let spend = 0;
   let x = 0;
+  checkInput();
   inputs.forEach(input => {
     input.value = 0;
-    checkInput();
     input.addEventListener('input', function (e) {
       reCount();
       checkInput();
