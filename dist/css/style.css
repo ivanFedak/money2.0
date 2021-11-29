@@ -300,7 +300,7 @@ body.ie ._ibg img {
 }
 
 .header__image img {
-  border-radius: 50%;
+  max-width: 100%;
 }
 
 .header__title {

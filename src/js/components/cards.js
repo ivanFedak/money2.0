@@ -18,6 +18,21 @@ const cards = ()=>{
             price: '10',
         },
         {
+            img: 'book.png',
+            title: 'Book',
+            price: '20',
+        },
+        {
+            img: 'whey.png',
+            title: 'Whey Protein',
+            price: '60',
+        },
+        {
+            img: 'ps5.png',
+            title: 'Play Station 5',
+            price: '1000',
+        },
+        {
             img: 'iphone.png',
             title: 'Iphone 13 Pro Max',
             price: '1500',
@@ -27,11 +42,11 @@ const cards = ()=>{
             title: 'Macbook Pro 2021',
             price: '3500',
         },
-        {
-            img: 'videoCard.png',
-            title: 'Nvidia Rtx 3090',
-            price: '3800',
-        },
+        // {
+        //     img: 'videoCard.png',
+        //     title: 'Nvidia Rtx 3090',
+        //     price: '3800',
+        // },
         {
             img: 'pc.png',
             title: 'Gaming Pc',
@@ -63,8 +78,8 @@ const cards = ()=>{
             price: '700000',
         },
         {
-            img: 'formula.png',
-            title: 'Formula 1 Car',
+            img: 'Pagani.jpg',
+            title: 'Pagani Zonda HP Barchetta',
             price: '15000000',
         },
 
