@@ -98,11 +98,16 @@ const cards = ()=>{
             title: 'Putin\'s palace',
             price: '1000000000',
         },
-        // {
-        //     img: 'charity.png',
-        //     title: 'Сharity',
-        //     price: '296199999999',
-        // },
+        {
+            img: 'ISS.png',
+            title: 'International Space Station',
+            price: '150000000000',
+        },
+        {
+            img: 'charity.png',
+            title: 'Сharity',
+            price: '296199999997',
+        },
     ];
 
     function createItem(data) {

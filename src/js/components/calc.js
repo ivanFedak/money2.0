@@ -89,7 +89,6 @@ const calc = ()=>{
     function btns(e){
         const target = e.target;
         const input = e.target.parentElement.querySelector(".main-block__input");
-
         if (target.classList.contains("main-block__buy")) {//click on 'buy"
             ++input.value; // +1
             reCount();
@@ -111,8 +110,8 @@ const calc = ()=>{
         }
 
     }
- 
-    document.addEventListener('click', (e)=> btns(e));
+    // document.addEventListener('click', (e)=> btns(e));
+    document.addEventListener('click',btns);
 
 //----------------------------------------Add to receipt--------------------------------------------\\
 

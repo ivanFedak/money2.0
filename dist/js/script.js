@@ -122,9 +122,10 @@ const calc = () => {
         target.parentElement.querySelector(".main-block__buy").classList.remove('_disabled');
       }
     }
-  }
+  } // document.addEventListener('click', (e)=> btns(e));
 
-  document.addEventListener('click', e => btns(e)); //----------------------------------------Add to receipt--------------------------------------------\\
+
+  document.addEventListener('click', btns); //----------------------------------------Add to receipt--------------------------------------------\\
 
   const blocks = document.querySelectorAll('.main-block__item');
   let listArr = [];
@@ -253,12 +254,15 @@ const cards = () => {
     img: 'Putin.png',
     title: 'Putin\'s palace',
     price: '1000000000'
-  } // {
-  //     img: 'charity.png',
-  //     title: 'Сharity',
-  //     price: '296199999999',
-  // },
-  ];
+  }, {
+    img: 'ISS.png',
+    title: 'International Space Station',
+    price: '150000000000'
+  }, {
+    img: 'charity.png',
+    title: 'Сharity',
+    price: '296199999997'
+  }];
 
   function createItem(data) {
     data.forEach(item => {
